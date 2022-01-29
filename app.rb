@@ -34,6 +34,14 @@ post '/visit' do
   @barber = params[:barber] 
   @color = params[:color]
 
+  c = Client.new 
+  c.name = @username
+  c.phone = @phone
+  c.datestamp = @datetime
+  c.barber = @barber
+  c.color = @color
+  c.save
+
   erb "<h2>Ok. Your are recorded</h2>"
 end
 
