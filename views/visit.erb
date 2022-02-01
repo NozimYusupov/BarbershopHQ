@@ -4,28 +4,21 @@
 <form action="/visit" method="post" role="form">
   <div class="form-group">
     <label>Your name</label>
-    <input name="username" type="text" class="form-control" placeholder="Enter your name" value="<%= @username %>">
+    <input name="client[name]" type="text" class="form-control" placeholder="Enter your name" value="">
   </div>
 
   <div class="form-group">
     <label>Your phone</label>
-    <input name="phone" type="text" class="form-control" placeholder="Enter your phone number" value="<%= @phone %>">
+    <input name="client[phone]" type="text" class="form-control" placeholder="Enter your phone number" value="">
   </div>
    <div class="form-group">
     <label>Когда вас ждать?</label>
-    <input id="datetimepicker" name="datetime" type="text" class="form-control" placeholder="Enter your Date and Time" value="<%= @datetime %>">
+    <input id="datetimepicker" name="client[datestamp]" type="text" class="form-control" placeholder="Enter your Date and Time" value="">
   </div>
-  <div class="form-group">
-    <select name="barber" class="form-control">
-      <% @barbers.each do |item| %>
-        <option <%= @barber == item['name'] ? 'selected' : '' %> ><%= item['name'] %></option>        
-      <% end %>
-    </select> 
-  </div>
-
+  
   <div class="form-group">
     <label>Какого цвета волосы вы хотите подкрасить?</label>
-    <select id="colorpicker" name="color">
+    <select id="colorpicker" name="client[color]">
       <option value="#7bd148">Green</option>
       <option value="#5484ed">Bold blue</option>
       <option value="#a4bdfc">Blue</option>
